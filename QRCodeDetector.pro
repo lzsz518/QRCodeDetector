@@ -39,29 +39,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/release/ -lopencv_core
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/debug/ -lopencv_core
-else:unix: LIBS += -L$$PWD/../../../../usr/local/lib64/ -lopencv_core
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../SDK/opencv3.4.7/build/x64/vc15/lib/ -lopencv_world347
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../SDK/opencv3.4.7/build/x64/vc15/lib/ -lopencv_world347d
+else:unix: LIBS += -L$$PWD/../../SDK/opencv3.4.7/build/x64/vc15/lib/ -lopencv_world347
 
-INCLUDEPATH += $$PWD/../../../../usr/local/include
-DEPENDPATH += $$PWD/../../../../usr/local/include
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/release/ -lopencv_imgproc
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/debug/ -lopencv_imgproc
-else:unix: LIBS += -L$$PWD/../../../../usr/local/lib64/ -lopencv_imgproc
-
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/release/ -lopencv_imgcodecs
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/debug/ -lopencv_imgcodecs
-else:unix: LIBS += -L$$PWD/../../../../usr/local/lib64/ -lopencv_imgcodecs
-
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/release/ -lopencv_highgui
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/debug/ -lopencv_highgui
-else:unix: LIBS += -L$$PWD/../../../../usr/local/lib64/ -lopencv_highgui
-
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/release/ -lopencv_objdetect
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../usr/local/lib64/debug/ -lopencv_objdetect
-else:unix: LIBS += -L$$PWD/../../../../usr/local/lib64/ -lopencv_objdetect
-
+INCLUDEPATH += $$PWD/../../SDK/opencv3.4.7/build/include
+DEPENDPATH += $$PWD/../../SDK/opencv3.4.7/build/include

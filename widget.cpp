@@ -14,6 +14,7 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->pb_open,SIGNAL(clicked(bool)),this,SLOT(open_qrimage()));
+    connect(ui->pb_exit,SIGNAL(clicked(bool)),this,SLOT(close()));
 }
 
 Widget::~Widget()
